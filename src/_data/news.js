@@ -1,10 +1,11 @@
 const axios = require("axios");
+require('dotenv').config();
 
-async function getUser() {
+module.exports = async function() {
     try {
-      const response = await axios.get(`http://newsapi.org/v2/top-headlines?country=us&apiKey=c96898cdc1c8417c8b15dfac8004c4a3&pageSize=5`);
+      const response = await axios.get(`http://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEWS_API_KEY}&pageSize=5`);
       return response.data;
     } catch (error) {
       console.error(error);
     }
-} 
+};
