@@ -3,7 +3,7 @@ require('dotenv').config();
 
 module.exports = async function() {
     try {
-      const response = await axios.get(`http://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEWS_API_KEY}&pageSize=5`);
+      const response = await axios.get(`http://newsapi.org/v2/everything?q=corona&country=id&apiKey=${process.env.NEWS_API_KEY}`);
       return response.data;
     } catch (error) {
       console.error(error);
