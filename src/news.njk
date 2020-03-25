@@ -1,0 +1,13 @@
+---
+title: Berita COVID19
+layout: base.njk
+---
+
+<ul>
+    {% for article in news.articles %}
+      <li>
+        <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+        <span>{{ article.source.name }} - <time>{{ article.publishedAt }}</time></span>
+      </li>
+    {% endfor %}
+</ul>

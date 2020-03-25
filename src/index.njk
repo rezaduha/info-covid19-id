@@ -1,15 +1,13 @@
 ---
-title: Berita COVID19
+title: Info Covid19 Indonesia
 layout: base.njk
 ---
 
 <h1>Info COVID19 .id 🇮🇩 </h1>
 
 <ul>
-    {% for article in news.articles %}
-      <li>
-        <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
-        <span>{{ article.source.name }} - <time>{{ article.publishedAt }}</time></span>
-      </li>
-    {% endfor %}
+    <li>Terkonfirmasi : {{ covid19.confirmed.value }}</li>
+    <li>Dalam Perawatan : {{ covid19.activeCare.value }}</li>
+    <li>Sembuh : {{ covid19.recovered.value }}</li>
+    <li>Meninggal : {{ covid19.deaths.value }}</li>
 </ul>
