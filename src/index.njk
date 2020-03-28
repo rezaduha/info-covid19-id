@@ -13,23 +13,50 @@ layout: base.njk
 </ul>
 
 <h1>Gejala</h1>
-<p>Tanda dan gejala umum infeksi COVID-19 antara lain gejala gangguan pernapasan akut seperti batuk kering, demam ≥38&#8451, dan sesak napas.
-Tanda-tanda dan gejala klinis yang dilaporkan pada sebagian besar kasus adalah demam, dengan beberapa kasus mengalami kesulitan bernapas, dan hasil rontgen menunjukkan infiltrat pneumonia luas di kedua paru.<br>
-<a href="https://infeksiemerging.kemkes.go.id/" target="blank">Kementerian Kesehatan Republik Indonesia</a></p>
+<p>Tanda dan gejala umum infeksi COVID-19 antara lain gejala gangguan pernapasan akut seperti batuk kering, demam
+    ≥38&#8451, dan sesak napas.
+    Tanda-tanda dan gejala klinis yang dilaporkan pada sebagian besar kasus adalah demam, dengan beberapa kasus
+    mengalami kesulitan bernapas, dan hasil rontgen menunjukkan infiltrat pneumonia luas di kedua paru.<br>
+    <a href="https://infeksiemerging.kemkes.go.id/" target="blank">Kementerian Kesehatan Republik Indonesia</a></p>
 <ul>
     <li>Batuk</li>
     <li>Demam</li>
     <li>Sesak Napas</li>
 </ul>
-<p>Hubungi dokter Anda jika Anda memiliki gejala dan telah melakukan kontak dekat dengan seseorang yang diketahui memiliki COVID-19, atau baru-baru ini bepergian dari daerah dengan penyebaran COVID-19 yang meluas / berkelanjutan.</p>
+<p>Hubungi dokter Anda jika Anda memiliki gejala dan telah melakukan kontak dekat dengan seseorang yang diketahui
+    memiliki COVID-19, atau baru-baru ini bepergian dari daerah dengan penyebaran COVID-19 yang meluas / berkelanjutan.
+</p>
 
 <h1>Lindungi Diri Anda Dari COVID-19</h1>
 <ul>
-    <li>Tutup mulut saat bersin/batuk dengan tisu atau gunakan masker. Buang tisu atau masker pada tempat sampah tertutup.</li>
-    <li>Cuci tangan dengan air dan sabun minimal 20 detik atau gunakan hand sanitizer berbasis alkohol minimal 60 persen.</li>
-    <li>Bersihkan dan lakukan disinfeksi permukaan benda yang sering disentuh seperti smartphone, kunci, atau gagang pintu.</li>
+    <li>Tutup mulut saat bersin/batuk dengan tisu atau gunakan masker. Buang tisu atau masker pada tempat sampah
+        tertutup.</li>
+    <li>Cuci tangan dengan air dan sabun minimal 20 detik atau gunakan hand sanitizer berbasis alkohol minimal 60
+        persen.</li>
+    <li>Bersihkan dan lakukan disinfeksi permukaan benda yang sering disentuh seperti smartphone, kunci, atau gagang
+        pintu.</li>
     <li>Terapkan pola hidup sehat dengan mengkonsumsi makanan-makanan bergizi dan rutih berolahraga.</li>
     <li>Hindari kontak dekat dengan orang yang sedang sakit, batuk, atau bersin.</li>
     <li>Jangan Menyentuh hidung, mulut, atau mata dengan tangan yang tidak steril. </li>
     <li>Sebaiknya jangan bepergian ke luar rumah saat sedang sakit atau menunjukkan gejala COVID-19.</li>
 </ul>
+
+<table>
+    <tr>
+        <th>No</th>
+        <th>Provinsi</th>
+        <th>Positif</th>
+        <th>Sembuh</th>
+        <th>Meninggal</th>
+    </tr>
+
+    {% for provinsi in covid19provinsi %}
+    <tr>
+        <th scope="row"></th>
+        <td>{{ provinsi.attributes.Provinsi }}</td>
+        <td>{{ provinsi.attributes.Kasus_Posi }}</td>
+        <td>{{ provinsi.attributes.Kasus_Semb }}</td>
+        <td>{{ provinsi.attributes.Kasus_Meni }}</td>
+    </tr>
+    {% endfor %}
+</table>
