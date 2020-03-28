@@ -9,12 +9,36 @@ layout: base.njk
         <p class="lead">Menyajikan informasi dan berita mengenai COVID-19 di Indonesia</p>
     </div>
 </div>
-<ul>
-    <li>Terkonfirmasi : {{ covid19.confirmed.value }}</li>
-    <li>Dalam Perawatan : {{ covid19.activeCare.value }}</li>
-    <li>Sembuh : {{ covid19.recovered.value }}</li>
-    <li>Meninggal : {{ covid19.deaths.value }}</li>
-</ul>
+
+<div class="container">
+    <div class="card-deck">
+        <div class="card">
+            <div class="card-body text-center bg-light shadow rounded">
+                <h5 class="card-title text-warning" style="font-size: 4rem;">{{ covid19.confirmed.value }}</h5>
+                <p class="card-text">Terkonfirmasi</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body text-center bg-light shadow rounded">
+                <h5 class="card-title text-info" style="font-size: 4rem;">{{ covid19.activeCare.value }}</h5>
+                <p class="card-text">Dalam Perawatan</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body text-center bg-light shadow rounded">
+                <h5 class="card-title text-success" style="font-size: 4rem;">{{ covid19.recovered.value }}</h5>
+                <p class="card-text">Sembuh</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body text-center bg-light shadow rounded">
+                <h5 class="card-title text-danger" style="font-size: 4rem;">{{ covid19.deaths.value }}</h5>
+                <p class="card-text">Meninggal</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <h1>Gejala</h1>
 <p>Tanda dan gejala umum infeksi COVID-19 antara lain gejala gangguan pernapasan akut seperti batuk kering, demam
