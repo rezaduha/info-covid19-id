@@ -23,23 +23,31 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-light bg-white">
-        <a class="navbar-brand"><mark>Info COVID-19.id</mark></a>
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" href="/">Info</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/news">Berita</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#about">Tentang</a>
-            </li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="navbar fixed-top navbar-light bg-white">
+            <a class="navbar-brand"><mark>Info COVID-19.id</mark></a>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/news">Berita</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Tentang</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
     {{ content | safe }}
-    <footer>Made with ♥ by Reza</footer>
+    <footer class="page-footer font-small blue pt-4">
+        <div class="footer-copyright text-center py-3">
+            <div class="badge badge-primary text-wrap" style="width: 10rem;">
+                Made with ♥ by Reza
+            </div>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
