@@ -50,13 +50,13 @@ layout: base.njk
         <th>Meninggal</th>
     </tr>
 
-    {% for provinsi in covid19provinsi %}
+    {% for province in covid19province %}
     <tr>
         <th scope="row"></th>
-        <td>{{ provinsi.attributes.Provinsi }}</td>
-        <td>{{ provinsi.attributes.Kasus_Posi }}</td>
-        <td>{{ provinsi.attributes.Kasus_Semb }}</td>
-        <td>{{ provinsi.attributes.Kasus_Meni }}</td>
+        <td>{{ province.attributes.Provinsi }}</td>
+        <td>{{ province.attributes.Kasus_Posi }}</td>
+        <td>{{ province.attributes.Kasus_Semb }}</td>
+        <td>{{ province.attributes.Kasus_Meni }}</td>
     </tr>
     {% endfor %}
 </table>
