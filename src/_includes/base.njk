@@ -12,43 +12,45 @@
             display: inline-block;
             line-height: 0em;
             padding-bottom: 0.7em;
-            background-color: yellow;
+            background-color: rgb(255, 255, 123);
         }
 
-        a mark:hover {
-            background-color: gold;
+        mark:hover {
+            background-color: yellow;
         }
     </style>
     <title>{{ title }}</title>
 </head>
 
 <body class="text-dark">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="/"><mark>Info COVID-19.id</mark></a>
-        <button type="button" class="btn btn-white shadow" data-toggle="modal"
-            data-target="#exampleModalCenter">Menu</button>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand" href="/"><mark>Info COVID-19.id</mark></a>
+            <button type="button" class="btn btn-white shadow" data-toggle="modal"
+                data-target="#ModalMenu">Menu</button>
 
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Menu</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <nav class="nav flex-column">
-                            <a class="nav-link" href="/">Info</a>
-                            <a class="nav-link" href="/news">Berita</a>
-                            <a class="nav-link" href="#">Tentang</a>
-                        </nav>
+            <div class="modal fade" id="ModalMenu" tabindex="-1" role="dialog" aria-labelledby="ModalMenuTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalMenuTitle">Menu</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <nav class="nav flex-column">
+                                <a class="nav-link" href="/">Info</a>
+                                <a class="nav-link" href="/news">Berita</a>
+                                <a class="nav-link" href="#">Tentang</a>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
     {{ content | safe }}
     <footer class="container-fluid text-center">

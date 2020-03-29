@@ -5,33 +5,34 @@ layout: base.njk
 
 <div class="jumbotron jumbotron-fluid bg-white">
     <div class="container">
-        <h1 class="display-4">Informasi COVID-19 di Indonesia</h1>
-        <p class="lead">Menyajikan informasi dan berita mengenai COVID-19 di Indonesia</p>
+        <h1 class="display-4 font-weight-bold">Informasi COVID-19 di Indonesia.</h1>
+        <p class="lead">Menyajikan informasi dan berita mengenai COVID-19 di Indonesia.</p>
     </div>
 </div>
 
 <div class="container">
+    <h3 class="font-weight-bold pb-3">Jumlah Kasus Saat Ini</h3>
     <div class="card-deck">
-        <div class="card">
-            <div class="card-body text-center bg-light shadow rounded">
+        <div class="card border-light">
+            <div class="card-body text-center bg-light shadow-sm rounded">
                 <h5 class="card-title text-warning" style="font-size: 4rem;">{{ covid19.confirmed.value }}</h5>
                 <p class="card-text">Terkonfirmasi</p>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body text-center bg-light shadow rounded">
+        <div class="card border-light">
+            <div class="card-body text-center bg-light shadow-sm rounded">
                 <h5 class="card-title text-info" style="font-size: 4rem;">{{ covid19.activeCare.value }}</h5>
                 <p class="card-text">Dalam Perawatan</p>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body text-center bg-light shadow rounded">
+        <div class="card border-light">
+            <div class="card-body text-center bg-light shadow-sm rounded">
                 <h5 class="card-title text-success" style="font-size: 4rem;">{{ covid19.recovered.value }}</h5>
                 <p class="card-text">Sembuh</p>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body text-center bg-light shadow rounded">
+        <div class="card border-light">
+            <div class="card-body text-center bg-light shadow-sm rounded">
                 <h5 class="card-title text-danger" style="font-size: 4rem;">{{ covid19.deaths.value }}</h5>
                 <p class="card-text">Meninggal</p>
             </div>
@@ -39,52 +40,162 @@ layout: base.njk
     </div>
 </div>
 
+<div class="container p-4">
+    <h4 class="text-center font-weight-bold"><a href="" data-toggle="modal" data-target="#ModalDataTable"><mark>Lihat
+                Data Per Provinsi</mark></a></h4>
 
-<h1>Gejala</h1>
-<p>Tanda dan gejala umum infeksi COVID-19 antara lain gejala gangguan pernapasan akut seperti batuk kering, demam
-    ≥38&#8451, dan sesak napas.
-    Tanda-tanda dan gejala klinis yang dilaporkan pada sebagian besar kasus adalah demam, dengan beberapa kasus
-    mengalami kesulitan bernapas, dan hasil rontgen menunjukkan infiltrat pneumonia luas di kedua paru.<br>
-    <a href="https://infeksiemerging.kemkes.go.id/" target="blank">Kementerian Kesehatan Republik Indonesia</a></p>
-<ul>
-    <li>Batuk</li>
-    <li>Demam</li>
-    <li>Sesak Napas</li>
-</ul>
-<p>Hubungi dokter Anda jika Anda memiliki gejala dan telah melakukan kontak dekat dengan seseorang yang diketahui
-    memiliki COVID-19, atau baru-baru ini bepergian dari daerah dengan penyebaran COVID-19 yang meluas / berkelanjutan.
-</p>
+    <div class="modal fade" id="ModalDataTable" tabindex="-1" role="dialog" aria-labelledby="ModalDataTableTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalDataTableTitle">Data Per Provinsi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Nama Provinsi</th>
+                                <th scope="col">Positif</th>
+                                <th scope="col">Sembuh</th>
+                                <th scope="col">Meninggal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for province in covid19province %}
+                            <tr>
+                                <td>{{ province.attributes.Provinsi }}</td>
+                                <td>{{ province.attributes.Kasus_Posi }}</td>
+                                <td>{{ province.attributes.Kasus_Semb }}</td>
+                                <td>{{ province.attributes.Kasus_Meni }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h1>Lindungi Diri Anda Dari COVID-19</h1>
-<ul>
-    <li>Tutup mulut saat bersin/batuk dengan tisu atau gunakan masker. Buang tisu atau masker pada tempat sampah
-        tertutup.</li>
-    <li>Cuci tangan dengan air dan sabun minimal 20 detik atau gunakan hand sanitizer berbasis alkohol minimal 60
-        persen.</li>
-    <li>Bersihkan dan lakukan disinfeksi permukaan benda yang sering disentuh seperti smartphone, kunci, atau gagang
-        pintu.</li>
-    <li>Terapkan pola hidup sehat dengan mengkonsumsi makanan-makanan bergizi dan rutih berolahraga.</li>
-    <li>Hindari kontak dekat dengan orang yang sedang sakit, batuk, atau bersin.</li>
-    <li>Jangan Menyentuh hidung, mulut, atau mata dengan tangan yang tidak steril. </li>
-    <li>Sebaiknya jangan bepergian ke luar rumah saat sedang sakit atau menunjukkan gejala COVID-19.</li>
-</ul>
+<div class="container">
+    <h1 class="text-center font-weight-bold pt-5">Tentang COVID-19</h1>
+    <h4 class="font-weight-bold">Gejala</h4>
+    <p>Tanda dan gejala umum infeksi COVID-19 antara lain gejala gangguan pernapasan akut seperti batuk kering, demam
+        ≥38&#8451, dan sesak napas. Tanda-tanda dan gejala klinis yang dilaporkan pada sebagian besar kasus adalah
+        demam, dengan beberapa kasus
+        mengalami kesulitan bernapas, dan hasil rontgen menunjukkan infiltrat pneumonia luas di kedua paru.
+    </p>
+    <p class="badge font-italic">Sumber: <a class="text-decoration-none" href="https://infeksiemerging.kemkes.go.id/"
+            target="blank">Kementerian
+            Kesehatan Republik Indonesia</a>
+    </p>
+    <h4 class="font-weight-bold pt-3">Lindungi Diri Anda Dari COVID-19</h4>
+    <div class="row row-cols-1 row-cols-sm-5 row-cols-md-3">
+        <div class="card mb-3 bg-none border-0 text-center p-3">Tutup mulut saat bersin/batuk dengan tisu atau gunakan
+            masker. Buang tisu atau masker pada
+            tempat sampah
+            tertutup.</div>
+        <div class="card mb-3 bg-none border-0 text-center p-3">Cuci tangan dengan air dan sabun minimal 20 detik atau
+            gunakan hand sanitizer berbasis
+            alkohol
+            minimal 60
+            persen.</div>
+        <div class="card mb-3 bg-none border-0 text-center p-3">Bersihkan dan lakukan disinfeksi permukaan benda yang
+            sering disentuh seperti smartphone,
+            kunci, atau gagang
+            pintu.</div>
+        <div class="card mb-3 bg-none border-0 text-center p-3">Terapkan pola hidup sehat dengan mengkonsumsi
+            makanan-makanan bergizi dan rutih
+            berolahraga.
+        </div>
+        <div class="card mb-3 bg-none border-0 text-center p-3">Hindari kontak dekat dengan orang yang sedang sakit,
+            batuk, atau bersin.</div>
+        <div class="card mb-3 bg-none border-0 text-center p-3">Sebaiknya jangan bepergian ke luar rumah saat sedang
+            sakit atau menunjukkan gejala
+            COVID-19.
+        </div>
+    </div>
+</div>
 
-<table>
-    <tr>
-        <th>No</th>
-        <th>Provinsi</th>
-        <th>Positif</th>
-        <th>Sembuh</th>
-        <th>Meninggal</th>
-    </tr>
+<div class="container">
+    <div class="alert alert-warning" role="alert">
+        <p>Hubungi dokter Anda jika Anda memiliki gejala dan telah melakukan kontak dekat dengan seseorang yang
+            diketahui
+            memiliki COVID-19, atau baru-baru ini bepergian dari daerah dengan penyebaran COVID-19 yang meluas /
+            berkelanjutan.</p>
+        <hr>
+        <p class="mb-0"><a class="badge font-italic" href="http://covid19.bnpb.go.id/"
+                target="blank">covid19.bnpb.go.id</a></p>
+    </div>
+</div>
 
-    {% for province in covid19province %}
-    <tr>
-        <th scope="row"></th>
-        <td>{{ province.attributes.Provinsi }}</td>
-        <td>{{ province.attributes.Kasus_Posi }}</td>
-        <td>{{ province.attributes.Kasus_Semb }}</td>
-        <td>{{ province.attributes.Kasus_Meni }}</td>
-    </tr>
-    {% endfor %}
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-xl-6">
+            <div class="card text-white mb-3 rounded" style="background-color: #00bdaa;">
+                <a class="text-decoration-none text-white" href="https://www.unicef.org/indonesia/id/coronavirus"
+                    target="blank">
+                    <div class="card-body">
+                        <h6 class="card-title pt-2 font-weight-bold">Novel coronavirus (COVID-19)</h6>
+                        <p class="badge pt-1 text-white-50">Unicef</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-12 col-xl-6">
+            <div class="card mb-3 rounded" style="background-color: #ffa41b;">
+                <a class="text-decoration-none text-white" href="" data-toggle="modal" data-target="#ModalDataPhoto"
+                    target="blank">
+                    <div class="card-body text-white">
+                        <h6 class="card-title pt-2 font-weight-bold">Daftar 100 Lebih Rumah sakit rujukan COVID-19</h6>
+                        <p class="badge pt-1 text-white-50">Kementrian Kesehatan</p>
+                    </div>
+                </a>
+                <div class="modal fade" id="ModalDataPhoto" tabindex="-1" role="dialog"
+                    aria-labelledby="ModalDataPhotoTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ModalDataPhotoTitle">Daftar RS Rujukan</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="https://covid19.kemkes.go.id/wp-content/uploads/2020/03/132-RS-Rujukan-PIE-Edit-Finak-SK-MK-2-1536x860.png"
+                                    class="img-fluid" alt="Daftar Rumah Sakit Rujukan COVID-19">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-xl-6">
+            <div class="card text-white mb-3 rounded" style="background-color: #ff5151;">
+                <a class="text-decoration-none text-white" href="https://infeksiemerging.kemkes.go.id/" target="blank">
+                    <div class="card-body">
+                        <h6 class="card-title pt-2 font-weight-bold">Media Informasi Resmi Penyakit Infeksi Emerging
+                        </h6>
+                        <p class="badge pt-1 text-white-50">Kementrian Kesehatan</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-12 col-xl-6">
+            <div class="card text-white mb-3 rounded" style="background-color: #9818d6;">
+                <a class="text-decoration-none text-white"
+                    href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
+                    target="blank">
+                    <div class="card-body">
+                        <h6 class="card-title pt-2 font-weight-bold">Saran untuk penyakit Coronavirus (COVID-19) untuk
+                            umum</h6>
+                        <p class="badge pt-1 text-white-50">WHO</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
