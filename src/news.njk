@@ -3,11 +3,34 @@ title: Berita COVID19
 layout: base.njk
 ---
 
-<ul>
+<div class="jumbotron jumbotron-fluid mt-2">
+  <div class="container">
+    <h1 class="display-5">Berita Terbaru Seputar COVID-19</h1>
+    <hr class="my-4">
+    <p>Informasi dan berita terkini berkaitan dengan COVID-19...</p>
+  </div>
+</div>
+
+<div class="container">
+  {% for article in news.articles %}
+  <div class="card border-0 bg-light shadow-sm mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ article.title }}</h5>
+      <p>{{ article.description }}<i>...</i></p>
+      <p class="card-text badge pt-1 text-black-50">{{ article.source.name }} - <time>{{ article.publishedAt }}</p>
+      <div class=" d-flex justify-content-end">
+        <a class="btn bg-warning" href="{{ article.url }}" target="blank">Baca</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- <ul>
     {% for article in news.articles %}
       <li>
         <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
         <span>{{ article.source.name }} - <time>{{ article.publishedAt }}</time></span>
       </li>
     {% endfor %}
-</ul>
+</ul> -->
