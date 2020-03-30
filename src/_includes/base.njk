@@ -10,6 +10,7 @@
 
     <style>
         mark {
+            overflow-wrap: anywhere;
             display: inline-block;
             line-height: 0em;
             padding-bottom: 0.7em;
@@ -19,6 +20,14 @@
         mark:hover {
             background-color: yellow;
         }
+
+        .nav mark {
+            overflow-wrap: anywhere;
+            display: inline-block;
+            line-height: 0em;
+            padding-bottom: 0.7em;
+            background-color: yellow;
+        }
     </style>
     <title>{{ title }}</title>
 </head>
@@ -26,7 +35,7 @@
 <body class="text-dark">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <a class="navbar-brand" href="/"><mark>Info COVID-19.id</mark></a>
+            <a class="navbar-brand font-weight-bold nav" href="/"><mark>Info COVID-19.id</mark></a>
             <button type="button" class="btn btn-white shadow" data-toggle="modal"
                 data-target="#ModalMenu">Menu</button>
         </nav>
@@ -45,7 +54,7 @@
                         <nav class="nav flex-column">
                             <a class="nav-link" href="/">Home</a>
                             <a class="nav-link" href="/news">News</a>
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="/about">About</a>
                         </nav>
                     </div>
                 </div>
