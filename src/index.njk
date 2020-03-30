@@ -4,36 +4,40 @@ layout: base.njk
 ---
 
 <div class="jumbotron jumbotron-fluid bg-white">
-    <div class="container">
+    <div class="container animated lightSpeedIn">
         <h1 class="display-4 font-weight-bold">Informasi COVID-19 di Indonesia.</h1>
         <p class="lead">Menyajikan informasi dan berita mengenai COVID-19 di Indonesia.</p>
     </div>
 </div>
 
 <div class="container">
-    <h3 class="font-weight-bold pb-3">Jumlah Kasus Saat Ini</h3>
+    <h3 class="font-weight-bold pb-3 animated pulse">Jumlah Kasus Saat Ini</h3>
     <div class="card-deck">
         <div class="card border-light">
             <div class="card-body text-center bg-light shadow-sm rounded">
-                <h5 class="card-title text-warning" style="font-size: 4rem;">{{ covid19.confirmed.value }}</h5>
+                <h5 class="card-title text-warning animated zoomIn" style="font-size: 4rem;">
+                    {{ covid19.confirmed.value }}</h5>
                 <p class="card-text">Terkonfirmasi</p>
             </div>
         </div>
         <div class="card border-light">
             <div class="card-body text-center bg-light shadow-sm rounded">
-                <h5 class="card-title text-info" style="font-size: 4rem;">{{ covid19.activeCare.value }}</h5>
+                <h5 class="card-title text-info animated zoomIn" style="font-size: 4rem;">{{ covid19.activeCare.value }}
+                </h5>
                 <p class="card-text">Dalam Perawatan</p>
             </div>
         </div>
         <div class="card border-light">
             <div class="card-body text-center bg-light shadow-sm rounded">
-                <h5 class="card-title text-success" style="font-size: 4rem;">{{ covid19.recovered.value }}</h5>
+                <h5 class="card-title text-success animated zoomIn" style="font-size: 4rem;">
+                    {{ covid19.recovered.value }}</h5>
                 <p class="card-text">Sembuh</p>
             </div>
         </div>
         <div class="card border-light">
             <div class="card-body text-center bg-light shadow-sm rounded">
-                <h5 class="card-title text-danger" style="font-size: 4rem;">{{ covid19.deaths.value }}</h5>
+                <h5 class="card-title text-danger animated zoomIn" style="font-size: 4rem;">{{ covid19.deaths.value }}
+                </h5>
                 <p class="card-text">Meninggal</p>
             </div>
         </div>
@@ -84,41 +88,33 @@ layout: base.njk
 <div class="container">
     <h1 class="text-center font-weight-bold pt-5">Tentang COVID-19</h1>
     <h4 class="font-weight-bold">Gejala</h4>
-    <p>Tanda dan gejala umum infeksi COVID-19 antara lain gejala gangguan pernapasan akut seperti batuk kering, demam
-        ≥38&#8451, dan sesak napas. Tanda-tanda dan gejala klinis yang dilaporkan pada sebagian besar kasus adalah
+    <p>Tanda dan gejala umum infeksi COVID-19 antara lain gejala gangguan pernapasan akut seperti batuk kering,
+        demam ≥38&#8451, dan sesak napas. Tanda-tanda dan gejala klinis yang dilaporkan pada sebagian besar kasus adalah
         demam, dengan beberapa kasus
         mengalami kesulitan bernapas, dan hasil rontgen menunjukkan infiltrat pneumonia luas di kedua paru.
     </p>
     <p class="badge font-italic">Sumber: <a class="text-decoration-none" href="https://infeksiemerging.kemkes.go.id/"
-            target="blank">Kementerian
-            Kesehatan Republik Indonesia</a>
+            target="blank">Kementerian Kesehatan Republik Indonesia</a>
     </p>
+
     <h4 class="font-weight-bold pt-3">Lindungi Diri Anda Dari COVID-19</h4>
     <div class="row row-cols-1 row-cols-sm-5 row-cols-md-3">
-        <div class="card mb-3 bg-none border-0 text-center p-3">Tutup mulut saat bersin/batuk dengan tisu atau gunakan
-            masker. Buang tisu atau masker pada
-            tempat sampah
-            tertutup.</div>
-        <div class="card mb-3 bg-none border-0 text-center p-3">Cuci tangan dengan air dan sabun minimal 20 detik atau
-            gunakan hand sanitizer berbasis
-            alkohol
-            minimal 60
-            persen.</div>
-        <div class="card mb-3 bg-none border-0 text-center p-3">Bersihkan dan lakukan disinfeksi permukaan benda yang
-            sering disentuh seperti smartphone,
-            kunci, atau gagang
-            pintu.</div>
+        <div class="card mb-3 bg-none border-0 text-center p-3">Tutup mulut saat bersin/batuk dengan tisu atau
+            gunakan masker. Buang tisu atau masker pada tempat sampah tertutup.</div>
+        <div class="card mb-3 bg-none border-0 text-center p-3">Cuci tangan dengan air dan sabun minimal 20 detik
+            atau gunakan hand sanitizer berbasis alkohol minimal 60 persen.</div>
+        <div class="card mb-3 bg-none border-0 text-center p-3">Bersihkan dan lakukan disinfeksi permukaan benda
+            yang sering disentuh seperti smartphone, kunci, atau gagang pintu.</div>
         <div class="card mb-3 bg-none border-0 text-center p-3">Terapkan pola hidup sehat dengan mengkonsumsi
-            makanan-makanan bergizi dan rutih
-            berolahraga.
+            makanan-makanan bergizi dan rutih berolahraga.
         </div>
         <div class="card mb-3 bg-none border-0 text-center p-3">Hindari kontak dekat dengan orang yang sedang sakit,
             batuk, atau bersin.</div>
         <div class="card mb-3 bg-none border-0 text-center p-3">Sebaiknya jangan bepergian ke luar rumah saat sedang
-            sakit atau menunjukkan gejala
-            COVID-19.
+            sakit atau menunjukkan gejala COVID-19.
         </div>
     </div>
+</div>
 </div>
 
 <div class="container">

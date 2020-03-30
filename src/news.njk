@@ -3,7 +3,7 @@ title: Berita COVID19
 layout: base.njk
 ---
 
-<div class="jumbotron jumbotron-fluid mt-2">
+<div class="jumbotron jumbotron-fluid mt-2 animated pulse">
   <div class="container">
     <h1 class="display-5">Berita Terbaru Seputar COVID-19</h1>
     <hr class="my-4">
@@ -13,7 +13,7 @@ layout: base.njk
 
 <div class="container">
   {% for article in news.articles %}
-  <div class="card border-0 bg-light shadow-sm mb-3">
+  <div class="card border-0 bg-light shadow-sm mb-3 animated fadeInUpBig">
     <div class="card-body">
       <h5 class="card-title">{{ article.title }}</h5>
       <p>{{ article.description }}<i>...</i></p>
