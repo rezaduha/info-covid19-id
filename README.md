@@ -1,4 +1,5 @@
 # info-covid19-id
+[![License: MIT](https://badgen.net/badge/license/MIT/blue)](https://opensource.org/licenses/MIT)
 
 ## Local development
 
