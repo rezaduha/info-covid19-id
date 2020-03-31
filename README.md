@@ -1,4 +1,4 @@
-# info-covid19-id [![License: MIT](https://badgen.net/badge/license/MIT/blue)](https://opensource.org/licenses/MIT)
+# info-covid19-id [![License: MIT](https://badgen.net/badge/license/MIT/blue)](https://opensource.org/licenses/MIT) [![Netlify Status](https://api.netlify.com/api/v1/badges/5779b3f7-d450-420b-8141-a2ccab510b70/deploy-status)](https://app.netlify.com/sites/info-covid-19/deploys)
 
 ## Local development
 
