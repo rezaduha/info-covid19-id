@@ -11,10 +11,10 @@ To work on this example locally, you can clone the repository and start editing,
 ```bash
 
 # clone the repo
-git clone https://github.com/rezaduha/jamstack-web-app-001.git
+git clone https://github.com/rezaduha/info-covid19-id.git
 
 # move into the working directory and install dependencies
-cd jamstack-web-app-001
+cd info-covid19-id
 npm install
 
 # build and start the local development server
