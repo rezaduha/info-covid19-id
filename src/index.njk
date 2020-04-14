@@ -12,31 +12,31 @@ layout: base.njk
 
 <div class="container">
     <h3 class="font-weight-bold pb-3 animated pulse">Jumlah Kasus Saat Ini</h3>
-    <div class="card-deck">
+    <div id="covid19" class="hidden card-deck">
         <div class="card border-light">
             <div class="card-body text-center bg-light shadow-sm rounded">
-                <h5 class="card-title text-warning animated zoomIn" style="font-size: 4rem;">
-                    {{ covid19.confirmed.value }}</h5>
+                <h5 id="confirmed" class="card-title text-warning animated zoomIn" style="font-size: 4rem;">
+                    {# {{ covid19.confirmed.value }} #}</h5>
                 <p class="card-text">Terkonfirmasi</p>
             </div>
         </div>
         <div class="card border-light">
             <div class="card-body text-center bg-light shadow-sm rounded">
-                <h5 class="card-title text-info animated zoomIn" style="font-size: 4rem;">{{ covid19.activeCare.value }}
+                <h5 id="activeCare" class="card-title text-info animated zoomIn" style="font-size: 4rem;">{# {{ covid19.activeCare.value }} #}
                 </h5>
                 <p class="card-text">Dalam Perawatan</p>
             </div>
         </div>
         <div class="card border-light">
             <div class="card-body text-center bg-light shadow-sm rounded">
-                <h5 class="card-title text-success animated zoomIn" style="font-size: 4rem;">
-                    {{ covid19.recovered.value }}</h5>
+                <h5 id="recovered" class="card-title text-success animated zoomIn" style="font-size: 4rem;">
+                    {# {{ covid19.recovered.value }} #}</h5>
                 <p class="card-text">Sembuh</p>
             </div>
         </div>
         <div class="card border-light">
             <div class="card-body text-center bg-light shadow-sm rounded">
-                <h5 class="card-title text-danger animated zoomIn" style="font-size: 4rem;">{{ covid19.deaths.value }}
+                <h5 id="deaths" class="card-title text-danger animated zoomIn" style="font-size: 4rem;">{# {{ covid19.deaths.value }} #}
                 </h5>
                 <p class="card-text">Meninggal</p>
             </div>
@@ -71,10 +71,10 @@ layout: base.njk
                         <tbody>
                             {% for province in covid19province %}
                             <tr>
-                                <td>{{ province.attributes.Provinsi }}</td>
-                                <td>{{ province.attributes.Kasus_Posi }}</td>
-                                <td>{{ province.attributes.Kasus_Semb }}</td>
-                                <td>{{ province.attributes.Kasus_Meni }}</td>
+                                <td id="province"><!-- {{ province.attributes.Provinsi }} --></td>
+                                <td id="positive"><!-- {{ province.attributes.Kasus_Posi }} --></td>
+                                <td id="recover"><!-- {{ province.attributes.Kasus_Semb }} --></td>
+                                <td id="died"><!-- {{ province.attributes.Kasus_Meni }} --></td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -197,3 +197,6 @@ layout: base.njk
         </div>
     </div>
 </div>
+
+<script src="/js/covid19.js"></script>
+<script src="/js/covid19province.js"></script>
